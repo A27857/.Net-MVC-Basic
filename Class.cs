@@ -77,13 +77,24 @@ namespace C__Fundamental__1
             {
                 OldMale[i].ExportStudent();              
             }
+
             Console.WriteLine("First Student OldestMale is: ");
             OldMale[0].ExportStudent();
+
+            Console.WriteLine("Student is Oldest: ");
+            Student temp1 = new Student();
+            for(int i=0; i<OldMale.Count; i++)
+            {
+                if(OldMale[i].DateOfBirth.Month < OldMale[i+1].DateOfBirth.Month)
+                {
+                  temp1 = OldMale[i];
+                }
+            }
+            temp1.ExportStudent();
             // foreach (var item in OldMale)
             // {
             //     item.ExportStudent();
-            // }
-            
+            // }            
         }
         public void ShowName()
         {
